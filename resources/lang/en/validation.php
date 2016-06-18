@@ -49,15 +49,15 @@ return [
 	],
 	"mimes"                => "The :attribute must be a file of type: :values.",
 	"min"                  => [
-		"numeric" => "The :attribute must be at least :min.",
-		"file"    => "The :attribute must be at least :min kilobytes.",
-		"string"  => "The :attribute must be at least :min characters.",
+		"numeric" => ":attribute musi mieć conajmniej :min.",
+		"file"    => ":attribute musi mieć conajmniej :min kilobajtów.",
+		"string"  => ":attribute musi mieć conajmniej :min znaków.",
 		"array"   => "The :attribute must have at least :min items.",
 	],
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => "pole :attribute jest wymagane.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -102,6 +102,13 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	//'attributes' => [],
+        'attributes' => array(
+            'password' => 'hasło',
+            'name' => 'imię',
+            'email' => 'adres e-mail',
+            
+            
+        ),
 
 ];
