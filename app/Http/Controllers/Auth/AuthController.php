@@ -96,7 +96,7 @@ class AuthController extends Controller {
         return redirect('/auth/login')
                     ->withInput($request->only('email'))
                     ->withErrors([
-                        'email' => 'These credentials do not match our records.',
+                        'email' => 'Podane dane nie są zgodne z wymaganymi poświadczeniami.',
                     ]); 
     }
 
