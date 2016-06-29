@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\test;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Mail;
 use Illuminate\Http\Request;
 
-class ZarejestrowanoController extends Controller {
+class TestController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,8 +14,14 @@ class ZarejestrowanoController extends Controller {
 	 */
 	public function index()
 	{
-           
-            return view('zarejestrowano');
+            $data=array();
+            Mail::send('test.test2', $data,function($message){
+                $message->from('no-reply@mietech.pl','CRM Mietech.pl')->subject('Rejestracja CRM mietech.pl');
+                $message->to('adam.krzyszkowski@wsb.poznan.pl');
+                
+                
+            }
+                );
 	}
 
 	/**

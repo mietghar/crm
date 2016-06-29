@@ -28,7 +28,7 @@ return [
 		"array"   => "The :attribute must have between :min and :max items.",
 	],
 	"boolean"              => "The :attribute field must be true or false.",
-	"confirmed"            => "The :attribute confirmation does not match.",
+	"confirmed"            => ":attribute nie jest zgodne z potwierdzeniem.",
 	"date"                 => "The :attribute is not a valid date.",
 	"date_format"          => "The :attribute does not match the format :format.",
 	"different"            => "The :attribute and :other must be different.",
@@ -55,7 +55,7 @@ return [
 		"array"   => "The :attribute must have at least :min items.",
 	],
 	"not_in"               => "The selected :attribute is invalid.",
-	"numeric"              => "The :attribute must be a number.",
+	"numeric"              => ":attribute musi być liczbą",
 	"regex"                => "The :attribute format is invalid.",
 	"required"             => "pole :attribute jest wymagane.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
@@ -70,7 +70,7 @@ return [
 		"string"  => "The :attribute must be :size characters.",
 		"array"   => "The :attribute must contain :size items.",
 	],
-	"unique"               => "The :attribute has already been taken.",
+	"unique"               => "pole :attribute już istnieje",
 	"url"                  => "The :attribute format is invalid.",
 	"timezone"             => "The :attribute must be a valid zone.",
 
@@ -105,8 +105,9 @@ return [
 	//'attributes' => [],
         'attributes' => array(
             'password' => 'hasło',
-            'name' => 'imię',
+            'name' => 'nazwa',
             'email' => 'adres e-mail',
+            'price' => 'cena',
             
             
         ),

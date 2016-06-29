@@ -8,7 +8,7 @@
 				<div class="panel-heading">CRM mietech.pl</div>
 
 				<div class="panel-body">
-					Jesteś zalogowany {{ Auth::user()->name }}!
+					Masz dostęp do ustawień użytkownika!
 				</div>
 			</div>
 		</div>

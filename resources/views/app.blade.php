@@ -34,6 +34,12 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Główna</a></li>
+                                        @if (Auth::check())
+<!--                                        @if (Auth::user()->role_id == 1)-->
+                                        <li><a href="{{ url('/cennik') }}">Cennik</a></li>
+                                        <li><a href="{{ url('/kontakty') }}">Kontakty</a></li>
+                                        <!--@endif-->
+                                        @endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -58,5 +64,6 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.0.0.min.js"></script>
 </body>
 </html>

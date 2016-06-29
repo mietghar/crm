@@ -135,6 +135,9 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+                'Illuminate\Html\HtmlServiceProvider',
+                //'Collective\Html\HtmlServiceProvider',
+                Barryvdh\DomPDF\ServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
@@ -144,6 +147,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+                //'Authority\AuthorityLaravel\AuthorityLaravelServiceProvider',
 
 	],
 
@@ -192,6 +196,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+                'Html'      => 'Illuminate\Html\HtmlFacade',
+                'Form'      => 'Illuminate\Html\FormFacade',
 
 	],
 

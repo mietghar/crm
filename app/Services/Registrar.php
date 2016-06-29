@@ -1,6 +1,7 @@
 <?php namespace App\Services;
 
 use App\User;
+use Mail;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -29,11 +30,21 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
+		$user=User::create([
 			'name' => $data['name'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 		]);
+                
+                Mail::send('emails.welcome', $data ,function($message) use ($data){
+                $message->from('no-reply@mietech.pl','CRM Mietech.pl')->subject('Rejestracja CRM mietech.pl');
+                $message->to($data['email']);
+                
+                
+            }
+                );
+                
+                return $user;
 	}
 
 }
