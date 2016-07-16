@@ -14,16 +14,20 @@
                                             <td>Kategoria</td>
                                             <td>Cena</td>
                                             <td>Waluta</td>
+                                            <td>Wyślij ofertę</td>
                                         </tr>
                                         @foreach($products as $product)
                                         <tr><td>{{$product->name}}</td>
                                             <td>{{$product->category}}</td>
                                             <td>{{$product->price}}</td>
-                                            <td>{{$product->currency}}</td></tr>
+                                            <td>{{$product->currency}}</td>
+                                            <td><a href="{{url('cennik/oferta1/')}}{{'/'}}{{$product->id}}"><span class='glyphicon glyphicon-send' title='Wyślij ofertę' alt='Wyślij ofertę'></span></a></td>
+                                        </tr>
                                         @endforeach
                                     </table>
 				</div>
 			</div>
+                    <a href="{{URL('cennik/')}}">Wstecz</a>
 		</div>
 	</div>
 </div>

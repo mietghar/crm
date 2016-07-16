@@ -30,6 +30,7 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
                 'roles' => 'App\Http\Middleware\CheckRole',
                 'admin' => 'App\Http\Middleware\MustBeAdministrator',
+                'root' => 'App\Http\Middleware\SuperUser',
 	];
 
 }

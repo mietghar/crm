@@ -8,7 +8,10 @@
 				<div class="panel-heading">CRM mietech.pl</div>
 
 				<div class="panel-body">
-					Jesteś zalogowany {{ Auth::user()->name }}!
+					Witaj w pracy {{ Auth::user()->name }}!
+				</div>
+                                <div class="panel-body">
+					Dziś jest {{ $ldate = date('d-m-Y') }} a przed tobą wiele pracy :)
 				</div>
 			</div>
 		</div>

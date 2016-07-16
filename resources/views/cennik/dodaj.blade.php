@@ -6,61 +6,63 @@
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">Dodawanie produktów</div>
-
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                
 				<div class="panel-body">
-                                    {{ Form::open(array('method'=>'post',
-                                                'action'=>'CennikController@index')) }}
-                                    {{ Form::label('name','Name') }}
-                                    {{ Form::text('name','Testowa wartosc') }}
-                                    {{ Form::submit('Dodaj') }}
-                                    {{ Form::close() }}
-<!--                                    <form class="form-horizontal" id="dodaj_produkt" role="form" title="dodaj produkt" action="../test" method="GET">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <label for="dodaj_produkt">Dodaj produkt</label><br/>
-                                        <div class="form-group">    
-                                            <label class="col-md-4 control-label" for="name">Nazwa</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="name"/>
-                                            </div>
+                                    {!! Form::open(array('method'=>'post',
+                                                'action'=>'Cennik\CennikController@createNew',
+                                                'class'=>'form-horizontal')) !!}
+                                    {!! Form::token() !!}
+                                    <div class="form-group">
+                                        {!! Form::label('name','Nazwa',array('class'=>'col-md-4 control-label')) !!}
+                                        <div class="col-md-6">
+                                            {!! Form::text('name',Input::old('name')) !!}
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="category">Kategoria</label>
-                                            <div class="col-md-6">
-                                                
-                                                <select>
-                                                    @foreach($categories as $category)
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('categories','Kategoria',array('class'=>'col-md-4 control-label')) !!}
+                                        <div class="col-md-6">
+                                            <select name="categories">
+                                                @foreach($categories as $category)
                                                     <option>{{$category->category}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="price">Cena</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="price"/>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('price','Cena',array('class'=>'col-md-4 control-label')) !!}
+                                        <div class="col-md-6">
+                                            {!! Form::text('price',Input::old('price')) !!}
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-4 control-label" for="currency">Waluta</label>
-                                                <div class="col-md-6">
-                                                    <select>
-                                                        @foreach($currencies as $currency)
-                                                        <option>{{$currency->currency}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('currencies','Waluta',array('class'=>'col-md-4 control-label')) !!}
+                                        <div class="col-md-6">
+                                            <select name="currencies">
+                                                @foreach($currencies as $currency)
+                                                    <option>{{$currency->currency}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="form-group">
-							<div class="col-xs-12 col-md-offset-0">
-								<button type="submit" class="btn btn-primary">
-									Dodaj
-								</button>
-							</div>
-						</div>
-                                    </form>-->
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            {!! Form::submit('Dodaj') !!}
+                                        </div>
+                                    </div>
+                                    {!! Form::close() !!}
                                     
 				</div>
 			</div>
+                    <a href="{{URL::previous()}}">Wstecz</a>
 		</div>
 	</div>
 </div>
